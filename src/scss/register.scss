@@ -1,0 +1,61 @@
+.header {
+    .title {
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+    @media (min-width: 768px){
+        .title {
+            text-align: center;
+        }
+    }
+    .text {
+        font-size: 12px;
+    }
+    .line {
+        border-bottom: 1px solid #999;
+    }
+    .form {
+        .form-group {
+            .left {
+                text-align: right;
+            }
+            @media (max-width: 768px){
+                .left {
+                    text-align: left;
+                }
+            }
+            
+            label {
+                width: 100%;
+                margin-top: 10px;
+                span {
+                    color: red;
+                }
+            }
+            .submit {
+                text-align: center;
+                button {
+                    width: 100px;
+                }
+            }
+        }
+        @media (min-width: 768px){
+            .form-group {
+                margin-top: 20px;
+            }
+        }
+        .radio {
+            p {
+                font-weight: 700;
+                margin: 10px 0 5px;
+            }
+            label {
+                width: auto;
+            }
+            .radio-inline {
+                margin-right: 20px;
+            }
+        }
+    }
+}
+
