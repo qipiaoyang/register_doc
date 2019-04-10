@@ -39,6 +39,9 @@ html,body {
       label {
           margin-right: 20px;
       }
+      > i {
+        display: none;
+      }
   }
   .submit-form {
     text-align: center;
@@ -46,7 +49,7 @@ html,body {
       width: 200px;
     }
   }
-  .isPay {
+  .isPay, .invoice, .danweipay {
       display: none;
   }
 }

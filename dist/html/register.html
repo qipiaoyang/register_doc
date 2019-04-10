@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>签到</title>
+    <title>报名</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="../css/bootstrap.css" />
     <link rel="stylesheet" href="../css/bootstrap-theme.css">
@@ -64,49 +64,80 @@
                             </div>
                         </div>
 
+
                         <div class="form-group">
+                            <label class="col-md-3 control-label">单位是否缴费</label>
+                            <div class="col-md-5">
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="danweipay" value="0" /> 否
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="danweipay" value="1" /> 是
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 单位下拉框，如果是，就显示这里 -->
+                        <div class="form-group danweipay">
+                            <label class="col-md-3 control-label">单位名称</label>
+                            <div class="col-md-5">
+                                <select class="form-control">
+                                    <option>单位名称</option>
+                                    <option>单位名称1</option>
+                                    <option>单位名称2</option>
+                                    <option>单位名称3</option>
+                                    <option>单位名称4</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- 如果单位未缴费，显示这里 -->
+                        <div class="form-group danweinopay">
                             <label class="col-md-3 control-label">单位名称</label>
                             <div class="col-md-5">
                                 <input type="text" class="form-control" name="danWeiName" />
                             </div>
                         </div>
 
-                        <div class="form-group">
+
+                        <div class="form-group danweinopay">
                             <label class="col-md-3 control-label">单位地址</label>
                             <div class="col-md-5">
                                 <input type="text" class="form-control" name="danWeiAddr" />
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group danweinopay">
                             <label class="col-md-3 control-label">是否住宿</label>
                             <div class="col-md-5">
                                 <div class="radio">
                                     <label>
-                                        <input type="radio" name="zhuSu" value="0" /> 是
+                                        <input type="radio" name="zhuSu" value="0" /> 否
                                     </label>
                                     <label>
-                                        <input type="radio" name="zhuSu" value="1" /> 否
+                                        <input type="radio" name="zhuSu" value="1" /> 是
                                     </label>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="form-group">
+                        
+                        <div class="form-group danweinopay">
                             <label class="col-md-3 control-label">是否要发票</label>
                             <div class="col-md-5">
                                 <div class="radio">
                                     <label>
-                                        <input type="radio" name="invoice" value="0" /> 是
+                                        <input type="radio" name="invoice" value="0" /> 否
                                     </label>
                                     <label>
-                                        <input type="radio" name="invoice" value="1" /> 否
+                                        <input type="radio" name="invoice" value="1" /> 是
                                     </label>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group invoice">
                             <label class="col-md-3 control-label">发票类型</label>
                             <div class="col-md-5">
                                 <div class="radio">
@@ -120,48 +151,41 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group invoice">
                             <label class="col-md-3 control-label">发票抬头</label>
                             <div class="col-md-5">
                                 <input type="text" class="form-control" name="invoiceTitle" />
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group invoice">
                             <label class="col-md-3 control-label">税号</label>
                             <div class="col-md-5">
                                 <input type="text" class="form-control" name="taxNum" />
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group invoice">
                             <label class="col-md-3 control-label">开户银行</label>
                             <div class="col-md-5">
                                 <input type="text" class="form-control" name="bank" />
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group invoice">
                             <label class="col-md-3 control-label">开户银行账号</label>
                             <div class="col-md-5">
                                 <input type="text" class="form-control" name="bankAccount" />
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group invoice">
                             <label class="col-md-3 control-label">职称</label>
                             <div class="col-md-5">
                                 <input type="text" class="form-control" name="zhiCheng" />
                             </div>
                         </div>
-                        
-                        <div class="form-group">
-                            <label class="col-md-3 control-label">班次</label>
-                            <div class="col-md-5">
-                                <input type="text" class="form-control" name="banCi" />
-                            </div>
-                        </div>
-
+                        <!-- ************ -->
                         <div class="form-group">
                             <div class="col-md-9 submit-form">
                                 <button type="submit" class="btn btn-primary submit" name="signup">提交</button>
@@ -208,6 +232,52 @@
                         validators: {
                             notEmpty: {
                                 message: '报名班级不能为空'
+                            }
+                        }
+                    },
+                    invoice: {
+                        validators: {
+                            callback: {
+                                callback: function (value, validator) {
+                                    if (value === "1") {
+                                        $(".invoice").css({
+                                            "display": "block"
+                                        });
+                                        return true;
+                                    }
+                                    if (value === "0") {
+                                        $(".invoice").css({
+                                            "display": "none"
+                                        });
+                                        return true;
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    danweipay: {
+                        validators: {
+                            callback: {
+                                callback: function (value, validator) {
+                                    if (value === "1") {
+                                        $(".danweipay").css({
+                                            "display": "block"
+                                        });
+                                        $(".danweinopay").css({
+                                            "display": "none"
+                                        });
+                                        return true;
+                                    }
+                                    if (value === "0") {
+                                        $(".danweinopay").css({
+                                            "display": "block"
+                                        });
+                                        $(".danweipay").css({
+                                            "display": "none"
+                                        });
+                                        return true;
+                                    }
+                                }
                             }
                         }
                     },

@@ -36,12 +36,15 @@ html, body {
 .signIn .radio label {
   margin-right: 20px; }
 
+.signIn .radio > i {
+  display: none; }
+
 .signIn .submit-form {
   text-align: center; }
   .signIn .submit-form .submit {
     width: 200px; }
 
-.signIn .isPay {
+.signIn .isPay, .signIn .invoice, .signIn .danweipay {
   display: none; }
 
 @media (min-width: 768px) {
