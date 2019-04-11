@@ -1,0 +1,12 @@
+.register_success {
+  width: 100%;
+  height: 100%; }
+  .register_success section {
+    width: 100%;
+    height: 100%;
+    padding-top: 180px; }
+    .register_success section p {
+      text-align: center;
+      margin: 0 0 10px; }
+    .register_success section .wrap {
+      text-align: center; }

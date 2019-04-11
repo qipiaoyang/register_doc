@@ -1,20 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-  <meta charset="UTF-8">
-  <title>登记成功</title>
-  <style>
-  </style>
+  <title>报名成功</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="../css/bootstrap.css" />
+  <link rel="stylesheet" href="../css/bootstrap-theme.css">
+  <link rel="stylesheet" href="../css/register_success.css" />
+  <script type="text/javascript" src="../js/jquery-1.10.2.min.js"></script>
+  <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../js/bootstrapValidator.js"></script>
+  <script type="text/javascript" src="../js/jquery.qrcode.min.js"></script>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+
 </head>
+
 <body>
-  <div>
-    success !
+  <div class="container-fluid register_success">
+    <div class="row">
+      <!-- form: -->
+      <section>
+        <div class="col-md-8 col-md-offset-2 wrap">
+          <p>您已成功报名，是否马上缴费。</p>
+          <a href="">
+            <button type="submit" class="btn btn-primary submit" name="signup">立即缴费</button>
+          </a>
+        </div>
+      </section>
+    </div>
   </div>
-  <script src="/lib/jquery-3.3.1.min.js"></script>
   <script>
-    jQuery(function ($) {
-      // todo ...
+    $(document).ready(function () {
+      $('#qrcode').qrcode({
+        text: "http://www.jq22.com",
+        width: 150,
+        height: 150
+      });
+
     });
   </script>
 </body>
+
 </html>

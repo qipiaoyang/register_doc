@@ -1,0 +1,12 @@
+.paysuccess {
+  width: 100%;
+  height: 100%; }
+  .paysuccess section {
+    width: 100%;
+    height: 100%;
+    padding-top: 180px; }
+    .paysuccess section p {
+      text-align: center;
+      margin: 0 0 10px; }
+    .paysuccess section .wrap {
+      text-align: center; }

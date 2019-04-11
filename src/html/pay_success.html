@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>报名成功</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../css/bootstrap.css" />
+    <link rel="stylesheet" href="../css/bootstrap-theme.css">
+    <link rel="stylesheet" href="../css/pay_success.css" />
+    <script type="text/javascript" src="../js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrapValidator.js"></script>
+    <script type="text/javascript" src="../js/jquery.qrcode.min.js"></script>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+
+</head>
+
+<body>
+    <div class="container-fluid pay_success">
+        <div class="row">
+            <!-- form: -->
+            <section>
+                <div class="col-md-8 col-md-offset-2 wrap">
+                    <p>支付转账凭证：<span>xxxxxxx</span></p>
+                    <p>缴费成功，截图保存你的支付凭证</p>
+                    <p>签到时填写支付凭证即可。</p>
+                    <a href="">
+                        <button type="submit" class="btn btn-default submit" name="signup">返回首页</button>
+                    </a>
+                    <a href="">
+                        <button type="submit" class="btn btn-primary submit" name="signup">申请发票</button>
+                    </a>
+                </div>
+            </section>
+            <!-- :form -->
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $('#qrcode').qrcode({
+                text: "http://www.jq22.com",
+                width: 150,
+                height: 150
+            });
+
+        });
+    </script>
+</body>
+
+</html>

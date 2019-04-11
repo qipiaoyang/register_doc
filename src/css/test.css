@@ -7,9 +7,14 @@
   margin-bottom: 10px;
   text-align: center; }
 
+.signIn .student {
+  margin-bottom: 0px; }
+
 @media (min-width: 768px) {
   .signIn .title {
-    text-align: center; } }
+    text-align: center; }
+  .signIn .student {
+    margin-bottom: 20px; } }
 
 .signIn .text {
   font-size: 12px; }

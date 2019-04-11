@@ -1,0 +1,46 @@
+.signIn .wrap {
+  background: #ffffff;
+  padding-bottom: 20px;
+  padding-top: 20px; }
+
+.signIn .title {
+  margin-bottom: 10px;
+  text-align: center; }
+
+.signIn .student {
+  margin-bottom: 0px; }
+
+@media (min-width: 768px) {
+  .signIn .title {
+    text-align: center; }
+  .signIn .student {
+    margin-bottom: 20px; } }
+
+.signIn .text {
+  font-size: 12px; }
+
+.signIn .line {
+  border-bottom: 1px solid #999;
+  margin-bottom: 20px; }
+
+.signIn .radio label {
+  margin-right: 20px; }
+
+.signIn .radio > i {
+  display: none; }
+
+.signIn .submit-form {
+  text-align: center; }
+  .signIn .submit-form .submit {
+    width: 200px; }
+
+.signIn .isPay, .signIn .invoice, .signIn .danweipay {
+  display: none; }
+
+@media (min-width: 768px) {
+  .form-horizontal .control-label {
+    text-align: left; } }
+
+@media (min-width: 1200px) {
+  .form-horizontal .control-label {
+    text-align: right; } }

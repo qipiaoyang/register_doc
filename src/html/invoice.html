@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>报名</title>
+    <title>发票申请</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="../css/bootstrap.css" />
     <link rel="stylesheet" href="../css/bootstrap-theme.css">
@@ -20,21 +20,16 @@
             <!-- form: -->
             <section>
                 <div class="col-md-8 col-md-offset-2 wrap">
-                    <h4 class="title">产品质量检验员培训班报名回执表</h4>
-                    <p class="text">
-                        【主题】：为了积极贯彻落实国务院发布的《质量振兴纲要》和《关于进一步加强产品质量工作若干问题的决定》,
-                        帮助企业建筑质量检验制度，加强质量监督和检验工作，更加科学务实地抓质量，湖北省质量技术监督培训中心拟于2019年
-                        5月下旬在武汉举办产品质量检测员培训班。报名信息见下：
-                    </p>
+                    <h4 class="title">发票申请</h4>
                     <div class="line"></div>
                     <form id="defaultForm" method="post" class="form-horizontal" action="/reg">
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <label class="col-md-3 control-label">姓名 <span>*</span></label>
                             <div class="col-md-5">
                                 <input type="text" class="form-control" name="name" required
                                     data-bv-trigger="keyup" data-bv-notempty-message="姓名不能为空" placeholder="请输入姓名" />
                             </div>
-                        </div>
+                        </div> -->
 
                         <div class="form-group">
                             <label class="col-md-3 control-label">手机号码</label>
@@ -43,7 +38,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <label class="col-md-3 control-label">性别</label>
                             <div class="col-md-5">
                                 <div class="radio">
@@ -55,51 +50,10 @@
                                     </label>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
 
-                        <div class="form-group">
-                            <label class="col-md-3 control-label">职务</label>
-                            <div class="col-md-5">
-                                <input type="text" class="form-control" name="zhiWu" />
-                            </div>
-                        </div>
+                    
 
-                        <div class="form-group">
-                            <label class="col-md-3 control-label">职称</label>
-                            <div class="col-md-5">
-                                <input type="text" class="form-control" name="zhiCheng" />
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="col-md-3 control-label">单位是否缴费</label>
-                            <div class="col-md-5">
-                                <div class="radio">
-                                    <label>
-                                        <input type="radio" name="danweipay" value="0" /> 否
-                                    </label>
-                                    <label>
-                                        <input type="radio" name="danweipay" value="1" /> 是
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- 单位下拉框，如果是，就显示这里 -->
-                        <div class="form-group danweipay">
-                            <label class="col-md-3 control-label">单位名称</label>
-                            <div class="col-md-5">
-                                <select class="form-control">
-                                    <option>单位名称</option>
-                                    <option>单位名称1</option>
-                                    <option>单位名称2</option>
-                                    <option>单位名称3</option>
-                                    <option>单位名称4</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <!-- 如果单位未缴费，显示这里 -->
                         <div class="form-group danweinopay">
                             <label class="col-md-3 control-label">单位名称</label>
                             <div class="col-md-5">
@@ -107,43 +61,7 @@
                             </div>
                         </div>
 
-
-                        <div class="form-group danweinopay">
-                            <label class="col-md-3 control-label">单位地址</label>
-                            <div class="col-md-5">
-                                <input type="text" class="form-control" name="danWeiAddr" />
-                            </div>
-                        </div>
-
-                        <div class="form-group danweinopay">
-                            <label class="col-md-3 control-label">是否住宿</label>
-                            <div class="col-md-5">
-                                <div class="radio">
-                                    <label>
-                                        <input type="radio" name="zhuSu" value="0" /> 否
-                                    </label>
-                                    <label>
-                                        <input type="radio" name="zhuSu" value="1" /> 是
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="form-group danweinopay">
-                            <label class="col-md-3 control-label">是否要发票</label>
-                            <div class="col-md-5">
-                                <div class="radio">
-                                    <label>
-                                        <input type="radio" name="invoice" value="0" /> 否
-                                    </label>
-                                    <label>
-                                        <input type="radio" name="invoice" value="1" /> 是
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group invoice">
+                        <div class="form-group">
                             <label class="col-md-3 control-label">发票类型</label>
                             <div class="col-md-5">
                                 <div class="radio">
@@ -157,28 +75,28 @@
                             </div>
                         </div>
 
-                        <div class="form-group invoice">
+                        <div class="form-group">
                             <label class="col-md-3 control-label">发票抬头</label>
                             <div class="col-md-5">
                                 <input type="text" class="form-control" name="invoiceTitle" />
                             </div>
                         </div>
 
-                        <div class="form-group invoice">
+                        <div class="form-group">
                             <label class="col-md-3 control-label">税号</label>
                             <div class="col-md-5">
                                 <input type="text" class="form-control" name="taxNum" />
                             </div>
                         </div>
 
-                        <div class="form-group invoice">
+                        <div class="form-group">
                             <label class="col-md-3 control-label">开户银行</label>
                             <div class="col-md-5">
                                 <input type="text" class="form-control" name="bank" />
                             </div>
                         </div>
 
-                        <div class="form-group invoice">
+                        <div class="form-group">
                             <label class="col-md-3 control-label">开户银行账号</label>
                             <div class="col-md-5">
                                 <input type="text" class="form-control" name="bankAccount" />
