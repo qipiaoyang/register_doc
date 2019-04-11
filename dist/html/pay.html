@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>支付</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../css/bootstrap.css" />
+    <link rel="stylesheet" href="../css/bootstrap-theme.css">
+    <link rel="stylesheet" href="../css/pay.css" />
+    <script type="text/javascript" src="../js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrapValidator.js"></script>
+    <script type="text/javascript" src="../js/jquery.qrcode.min.js"></script>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+
+</head>
+
+<body>
+    <div class="container-fluid pay">
+        <div class="row">
+            <!-- form: -->
+            <section>
+                <div class="col-md-8 col-md-offset-2 wrap">
+                    <p>您正在购买：xxxxx课程</p>
+                    <p>支付金额<span>790.00</span>元</p>
+                    <p>请使用微信二维码支付</p>
+                    <div class="row">
+                        <div class="col-xs-8 col-xs-offset-2 qrcode">
+                            <div id="qrcode" style="width:100%;"></div>
+                        </div>
+                    </div>
+                    <p style="margin-top: 20px;">扫码后请不要关闭页面，并等待支付完成。</p>
+                </div>
+            </section>
+            <!-- :form -->
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $('#qrcode').qrcode({
+                text: "http://www.jq22.com",
+                width: 150,
+                height: 150
+            });
+
+        });
+    </script>
+</body>
+
+</html>
