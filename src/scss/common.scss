@@ -1,4 +1,5 @@
 .signIn {
+  height: 100%;
     .wrap {
         background: #ffffff;
         padding-bottom: 20px;
@@ -11,6 +12,32 @@
   .student {
       margin-bottom: 0px;
     }
+
+  .center_btn {
+    text-align: center;
+    a {
+      display: inline-block;
+      width: 200px;
+      margin: 20px 0;
+      button {
+        width: 100%;
+      }
+    }
+  }
+  .index_img {
+    margin-top: 20px;
+  }
+  .images {
+    position: relative;
+    img {
+      width: 100%;
+    }
+    .position_btn {
+      position: absolute;
+      right: 30px;
+      bottom: 15px;
+    }
+  }
   @media (min-width: 768px) {
     .title {
       text-align: center;
