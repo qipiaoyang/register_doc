@@ -24,6 +24,31 @@
       }
     }
   }
+
+  .authcode, .runtime {
+    padding: 0 15px 0 0;
+    text-align: right;
+    .horizon {
+      display: inline-block;
+      width: 1px;
+      background: #ff9966;
+      height: 15px;
+      margin: 0 5px;
+      margin-bottom: -2px;
+      
+    }
+    span {
+      line-height: 34px;
+      color: #ff9966;
+    }
+  }
+  .authcode {
+    display: block;
+  }
+  .runtime {
+    display: none;
+  }
+
   .index_img {
     margin-top: 20px;
   }

@@ -17,6 +17,23 @@
       margin: 20px 0; }
       .signIn .center_btn a button {
         width: 100%; }
+  .signIn .authcode, .signIn .runtime {
+    padding: 0 15px 0 0;
+    text-align: right; }
+    .signIn .authcode .horizon, .signIn .runtime .horizon {
+      display: inline-block;
+      width: 1px;
+      background: #ff9966;
+      height: 15px;
+      margin: 0 5px;
+      margin-bottom: -2px; }
+    .signIn .authcode span, .signIn .runtime span {
+      line-height: 34px;
+      color: #ff9966; }
+  .signIn .authcode {
+    display: block; }
+  .signIn .runtime {
+    display: none; }
   .signIn .index_img {
     margin-top: 20px; }
   .signIn .images {
