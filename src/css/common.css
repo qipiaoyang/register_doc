@@ -38,6 +38,8 @@
       margin-top: 20px; }
       .signIn .reminder .position_btn a {
         margin-left: 20px; }
+  .signIn .detailspan {
+    line-height: 34px; }
   .signIn .down_line p {
     border-bottom: 1px solid #f2f2f2;
     background: none;
