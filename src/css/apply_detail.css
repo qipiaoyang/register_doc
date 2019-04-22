@@ -1,0 +1,104 @@
+@charset "UTF-8";
+.apply_detail {
+  width: 100%;
+  height: 100%;
+  background: #f6f6f6; }
+  .apply_detail .title {
+    padding: 0;
+    position: relative; }
+    .apply_detail .title img {
+      width: 100%; }
+    .apply_detail .title p {
+      position: absolute;
+      top: 25px;
+      left: 20px;
+      font-size: 24px;
+      color: #ffffff;
+      width: 200px;
+      line-height: 30px; }
+  .apply_detail .info {
+    padding: 0 10px;
+    font-size: 16px;
+    color: #333333;
+    line-height: 50px;
+    background: #ffffff;
+    margin-bottom: 20px; }
+    .apply_detail .info p {
+      border-bottom: 1px solid #e6e6e6;
+      margin: 0; }
+      .apply_detail .info p span {
+        float: right; }
+      .apply_detail .info p .price {
+        color: #ff4848; }
+    .apply_detail .info p:last-child {
+      border-bottom: 0; }
+  .apply_detail .wechat,
+  .apply_detail .company {
+    position: relative;
+    width: 100%;
+    height: 75px;
+    border-bottom: 1px solid #e6e6e6;
+    padding-top: 22px;
+    background: #ffffff; }
+    .apply_detail .wechat span,
+    .apply_detail .wechat input,
+    .apply_detail .company span,
+    .apply_detail .company input {
+      display: inline-block;
+      font-size: 15px; }
+      .apply_detail .wechat span p,
+      .apply_detail .wechat input p,
+      .apply_detail .company span p,
+      .apply_detail .company input p {
+        line-height: 18px;
+        margin: 0; }
+      .apply_detail .wechat span .remark,
+      .apply_detail .wechat input .remark,
+      .apply_detail .company span .remark,
+      .apply_detail .company input .remark {
+        font-size: 12px;
+        color: #999999; }
+    .apply_detail .wechat input,
+    .apply_detail .company input {
+      position: absolute;
+      right: 15px;
+      top: 25px;
+      width: 24px;
+      height: 24px; }
+    .apply_detail .wechat .radio input[type="radio"],
+    .apply_detail .company .radio input[type="radio"] {
+      cursor: pointer;
+      vertical-align: middle;
+      margin-right: 5px; }
+      .apply_detail .wechat .radio input[type="radio"]:not(:first-child),
+      .apply_detail .company .radio input[type="radio"]:not(:first-child) {
+        margin-left: 20px; }
+      .apply_detail .wechat .radio input[type="radio"]:checked + label::before,
+      .apply_detail .company .radio input[type="radio"]:checked + label::before {
+        background-color: #82b64a !important;
+        content: "✓";
+        font-size: 14px;
+        line-height: 14px;
+        text-align: center;
+        color: #fff; }
+    .apply_detail .wechat img,
+    .apply_detail .company img {
+      width: 34px;
+      float: left;
+      height: 34px;
+      margin-right: 10px; }
+  .apply_detail .company {
+    margin-left: 0;
+    border-bottom: 0; }
+    .apply_detail .company span {
+      line-height: 34px; }
+  .apply_detail .submit {
+    background: #55b7fb;
+    border-radius: 5px;
+    border: 1px solid #55b7fb;
+    height: 50px;
+    line-height: 50px;
+    color: #ffffff;
+    font-size: 18px;
+    width: 100%;
+    margin-top: 50px; }

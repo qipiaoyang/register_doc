@@ -1,16 +1,45 @@
 .pay {
+  background: #f1f8fe;
   width: 100%;
   height: 100%; }
-  .pay section {
-    width: 100%;
-    height: 100%;
-    padding-top: 180px; }
-    .pay section p {
+  .pay .wrap {
+    padding: 0; }
+  .pay .main {
+    background: url(../images/personal_bg.png);
+    padding-top: 20px; }
+    .pay .main > p {
+      font-size: 30px;
+      color: #ffffff;
       text-align: center;
-      margin: 0 0 5px; }
-      .pay section p > span {
-        font-size: 24px;
-        color: #ff6600;
-        padding: 0 5px; }
-    .pay section .qrcode {
+      margin-bottom: 15px; }
+    .pay .main .code {
+      background: url(../images/qrcode.png) 100%;
+      background-size: contain;
+      height: 256px;
       text-align: center; }
+      .pay .main .code p {
+        text-align: center;
+        font-size: 16px;
+        color: #333333;
+        margin-top: 40px; }
+        .pay .main .code p .biaozhu {
+          color: #ff4848; }
+      .pay .main .code .describe {
+        margin-top: 20px;
+        color: #ffffff; }
+  .pay .pay_content {
+    padding: 0; }
+    .pay .pay_content img {
+      width: 100%;
+      margin-top: 20px; }
+    .pay .pay_content a {
+      display: inline-block;
+      width: 100%;
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+      color: #ffffff;
+      border-radius: 5px;
+      background: #55B7FB;
+      font-size: 18px;
+      margin-top: 30px; }

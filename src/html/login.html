@@ -68,6 +68,9 @@
     <!-- <script src="/lib/jquery-3.3.1.min.js"></script> -->
     <script>
         jQuery(function ($) {
+            var ison = false;
+
+
             function sendAuthCode() {
                 $(".authcode").css({
                     "display": "none"
@@ -75,6 +78,7 @@
                 $(".runtime").css({
                     "display": "block"
                 });
+                ison = true;
                 var setunterval = setInterval(function () {
                     $("#number").text(Number($("#number").text()) - 1);
                     if (Number($("#number").text()) < 1) {
@@ -85,14 +89,19 @@
                         $(".authcode").css({
                             "display": "block"
                         });
+                        ison = false;
                         $("#number").text("59");
                     }
+                    
+                }, 1000);
+                if (ison) {
                     $("#retry").on("click", function () {
                         $("#number").text("59");
                     })
-                }, 1000);
+                }
 
             }
+            
             $(".authcode").on("click", function () {
                 sendAuthCode();
             });

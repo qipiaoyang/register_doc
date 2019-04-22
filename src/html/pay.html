@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>支付</title>
+    <title>微信扫码</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="../css/bootstrap.css" />
     <link rel="stylesheet" href="../css/bootstrap-theme.css">
@@ -11,7 +11,8 @@
     <script type="text/javascript" src="../js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../js/bootstrapValidator.js"></script>
     <script type="text/javascript" src="../js/jquery.qrcode.min.js"></script>
-    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 
 </head>
 
@@ -21,28 +22,82 @@
             <!-- form: -->
             <section>
                 <div class="col-md-8 col-md-offset-2 wrap">
-                    <p>您正在购买：xxxxx课程</p>
-                    <p>支付金额<span>790.00</span>元</p>
-                    <p>请使用微信二维码支付</p>
-                    <div class="row">
-                        <div class="col-xs-8 col-xs-offset-2 qrcode">
-                            <div id="qrcode" style="width:100%;"></div>
+                    <div class="main">
+                        <p>检测员培训班</p>
+                        <div class="row">
+                            <div class="col-xs-8 col-xs-push-2 code">
+                                <p>请在<span class="biaozhu"><span class="hour">14</span>分<span
+                                            class="minute">59</span>秒</span>内完成支付</p>
+                                <div class="qrcode">
+                                    <div id="qrcode"></div>
+                                </div>
+                                <p class="describe">请打开微信【扫一扫】完成支付</p>
+                            </div>
                         </div>
                     </div>
-                    <p style="margin-top: 20px;">扫码后请不要关闭页面，并等待支付完成。</p>
                 </div>
+                <div class="col-xs-12 pay_content">
+                    <div class="row">
+                        <div class="col-xs-10 col-xs-push-1">
+                            <img src="../images/pay_content.png" alt="加载失败">
+                            <a href="">
+                                我已完成支付
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
             </section>
             <!-- :form -->
         </div>
     </div>
     <script>
         $(document).ready(function () {
+            function GetQueryString(name) {
+                var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+                var r = window.location.search.substr(1).match(reg);
+                console.log(r, "----")
+                if (r != null) return unescape(r[2]); return null;
+            }
             $('#qrcode').qrcode({
-                text: "http://www.jq22.com",
-                width: 150,
-                height: 150
+                text: GetQueryString("qrCodeUrl"),
+                width: 130,
+                height: 130
             });
+            var data = {
+                id: GetQueryString("id")
+            },
+                time = 900; // 默认15分钟
+            var setinterval = setInterval(function () {
+                --time;
+                console.log(time)
+                $(".hour").text(~~(time / 60));
+                $(".minute").text(time % 60);
+                $.ajax({
+                    method: 'get',
+                    url: "/pay/result",
+                    contentType: 'application/json; charset=UTF-8',
+                    data: JSON.stringify(data),
+                    dataType: 'json',
+                    // beforeSend: function (jqXHR, settings) { },
+                    // complete: function (jqXHR, textStatus) { },
+                    success: function (data, textStatus, jqXHR) {
+                        if (parseInt(data.code) < 400) {
+                            if (data.success) {
+                                clearInterval(setinterval);
+                                window.location.href = window.location.origin + "pay_success";
+                            }
+                        } else {
+                            alert(data.msg || '服务器错误，请稍后重试!');
+                        }
 
+                    },
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        // alert('网络错误，请稍后重试!');
+                    },
+                });
+
+            }, 1000)
         });
     </script>
 </body>

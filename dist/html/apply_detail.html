@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>报名详情</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../css/bootstrap.css" />
+    <link rel="stylesheet" href="../css/bootstrap-theme.css">
+    <link rel="stylesheet" href="../css/common.css" />
+    <link rel="stylesheet" href="../css/apply_detail.css" />
+    <script type="text/javascript" src="../js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrapValidator.js"></script>
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+
+</head>
+
+<body>
+    <div class="container-fluid apply_detail">
+        <div class="row"> 
+            <!-- form: -->
+            <section>
+                <div class="col-md-8 col-md-offset-2 wrap">
+                    <div class="row">
+                        <div class="col-xs-12 title">
+                            <img src="../images/banner.png" alt="加载失败">
+                            <p>您已报名产品质量检验员培训班</p>
+                        </div>
+                        <div class="col-xs-12 info">
+                            <p>报名费用<span class="price">1280.00元/人</span></p>
+                            <p>报名手机号<span class="phone">15871360225</span></p>
+                        </div>
+                        <div class="col-xs-12 info">
+                            <p>选择支付方式</p>
+                        </div>
+                        <form>
+                            <label class="radio-inline wechat">
+                                <div>
+                                    <img src="../images/wechat.png" alt="加载失败">
+                                    <span>
+                                        <p>微信支付</p>
+                                        <p class="remark">使用微信扫码支付</p>
+                                    </span>
+                                </div>
+                                <input type="radio" name="paytype" id="inlineRadio1" value="wechat" checked>
+                            </label>
+                            <label class="radio-inline company">
+                                <div>
+                                    <img src="../images/company.png" alt="加载失败">
+                                    <span>
+                                        已有单位代缴
+                                    </span>
+                                </div>
+                                <input type="radio" name="paytype" id="inlineRadio2" value="wxpay_mweb" class="radio">
+                            </label>
+                            <div class="form-group">
+                                <div class="col-xs-12 submit-form">
+                                    <button type="submit" class="submit" name="signup">下一步</button>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </section>
+            <!-- :form -->
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $(".submit").on("click",function() {
+                var data = {
+                    paytype: $("input[name='paytype']").val()
+                };
+                $.ajax({
+                    method: 'get',
+                    url: window.location.pathname,
+                    contentType: 'application/json; charset=UTF-8',
+                    data: JSON.stringify(data),
+                    dataType: 'json',
+                    // beforeSend: function (jqXHR, settings) { },
+                    // complete: function (jqXHR, textStatus) { },
+                    success: function (data, textStatus, jqXHR) {
+                        if (parseInt(data.code) < 400) {
+                            window.location.href = window.location.origin + "pay?id=" + data.payOrder.id + "&qrCodeUrl=" + data.payOrder.qrCodeUrl
+                        } else {
+                            alert(data.msg || '服务器错误，请稍后重试!');
+                        }
+                        
+                    },
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        // alert('网络错误，请稍后重试!');
+                    },
+                });
+            })
+
+            
+
+
+        });
+    </script>
+</body>
+
+</html>

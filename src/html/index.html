@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="../css/bootstrap.css" />
     <link rel="stylesheet" href="../css/bootstrap-theme.css">
-    <link rel="stylesheet" href="../css/common.css" />
+    <link rel="stylesheet" href="../css/index.css" />
     <script type="text/javascript" src="../js/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="../js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../js/bootstrapValidator.js"></script>
@@ -16,49 +16,45 @@
 </head>
 
 <body>
-    <div class="container-fluid signIn">
+    <div class="container-fluid index">
         <div class="row">
             <!-- form: -->
             <section>
                 <div class="col-md-8 col-md-offset-2 wrap">
                     <div class="row">
-                        <div class="col-xs-12 images">
-                            <img src="../images/test.jpg" alt="加载失败">
+                        <div class="col-xs-8 col-xs-push-2 logo">
+                            <img src="../images/logo.png" alt="加载失败">
                         </div>
-                        <div class="col-xs-12 reminder">
-                            <p>您有一笔待缴费用<i class="glyphicon glyphicon-menu-right"></i></p>
-                            <!-- <p>报名成功，查看详情<i class="glyphicon glyphicon-menu-right"></i></p> -->
-                        </div>
-                        <div class="col-xs-6 center_btn index_img">
-                            <a href="">
-                                <button type="submit" class="btn btn-default submit" name="signup">个人报名入口</button>
-                            </a>
-                        </div>
-                        <div class="col-xs-6 center_btn index_img">
-                            <a href="">
-                                <button type="submit" class="btn btn-default submit" name="signup">缴费</button>
-                            </a>
-                        </div>
-                        <div class="col-xs-6 center_btn index_img">
-                            <a href="">
-                                <button type="submit" class="btn btn-default submit" name="signup">申请发票</button>
-                            </a>
-                        </div>
-						<div class="col-xs-6 center_btn index_img">
-						    <a href="">
-						        <button type="submit" class="btn btn-default submit" name="signup">现场签到</button>
-						    </a>
-                        </div>
-                        <div class="col-xs-12 center_btn index_img">
-                            <a href="">
-                                <button type="submit" class="btn btn-default submit" name="signup">我的报名</button>
-                            </a>
-                        </div>
+                        <div class="col-xs-12 content">
+                            <div class="myrecord">
+                                <p>
+                                    <span></span>
+                                    我的记录
+                                    <i class="glyphicon glyphicon-menu-right"></i>
+                                </p>
+                            </div>
+                            <div class="col-xs-3 item">
+                                <img src="../images/personal_pay.png" alt="加载失败">
+                                <span>个人报名</span>
+                            </div>
+                            <div class="col-xs-3 item">
+                                <img src="../images/pay.png" alt="加载失败">
+                                <span>缴费</span>
+                            </div>
+                            <div class="col-xs-3 item">
+                                <img src="../images/Invoice.png" alt="加载失败">
+                                <span>申请发票</span>
+                            </div>
+                            <div class="col-xs-3 item">
+                                <img src="../images/signin.png" alt="加载失败">
+                                <span>现场签到</span>
+                            </div>
 
-                        <div class="col-xs-12 reminder">
-                            <p class="position_btn">单位报名快速进入<a href="">
-                                <button type="submit" class="btn btn-default submit" name="signup">单位报名入口</button>
-                            </a></p>
+                            <div class="col-xs-12 danwei">
+                                <a href="">单位报名入口</a>
+                            </div>
+
+
                         </div>
                     </div>
                 </div>
@@ -71,7 +67,7 @@
         $(document).ready(function () {
 
 
-           
+
         });
     </script>
 </body>

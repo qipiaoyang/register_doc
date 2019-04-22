@@ -2,20 +2,18 @@
   height: 100%; }
   .signIn .user {
     height: 100%; }
-    .signIn .user section {
+    .signIn .user section .wrap {
       height: 100%; }
-      .signIn .user section .wrap {
-        height: 100%; }
-        .signIn .user section .wrap .logout {
-          position: absolute;
-          bottom: 20px;
-          left: 50%;
-          -webkit-transform: translateX(-50%);
-          transform: translateX(-50%); }
+      .signIn .user section .wrap .logout {
+        text-align: center; }
+        .signIn .user section .wrap .logout > div {
+          margin-top: 20px; }
   .signIn .wrap {
     background: #ffffff;
     padding-bottom: 20px;
     padding-top: 20px; }
+    .signIn .wrap .row {
+      position: relative; }
   .signIn .title {
     margin-bottom: 10px;
     text-align: center; }
