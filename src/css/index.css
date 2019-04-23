@@ -19,16 +19,16 @@
       color: #333333;
       font-weight: 100;
       line-height: 54px; }
-      .index .content .myrecord > p {
+      .index .content .myrecord p {
         border-bottom: 1px solid #f5f4f5; }
-        .index .content .myrecord > p span {
+        .index .content .myrecord p span {
           display: inline-block;
           margin-bottom: 3px;
           width: 6px;
           height: 6px;
           border-radius: 50%;
           background: red; }
-        .index .content .myrecord > p i {
+        .index .content .myrecord p i {
           float: right;
           font-size: 16px;
           line-height: 54px;
@@ -37,10 +37,14 @@
     .index .content .item {
       text-align: center;
       padding: 0 10px; }
+      .index .content .item:hover span, .index .content .item:active span {
+        color: #333333; }
       .index .content .item img {
         width: 100%;
         margin-bottom: 10px;
         margin-top: 10px; }
+      .index .content .item span {
+        color: #333333; }
     .index .content .danwei {
       text-align: center;
       margin-top: 20px;
